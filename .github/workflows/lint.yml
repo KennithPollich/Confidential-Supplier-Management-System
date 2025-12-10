@@ -1,0 +1,81 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint || true
+        continue-on-error: true
+
+      - name: Check code formatting
+        run: npm run format:check || true
+        continue-on-error: true
+
+      - name: Run Solidity linter
+        run: npx solhint 'contracts/**/*.sol' || true
+        continue-on-error: true
+
+  typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: TypeScript type checking
+        run: npx tsc --noEmit
+
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Slither security analysis
+        run: |
+          pip3 install slither-analyzer
+          slither . || true
+        continue-on-error: true
+
+      - name: Check for known vulnerabilities
+        run: npm audit --audit-level=moderate || true
+        continue-on-error: true
