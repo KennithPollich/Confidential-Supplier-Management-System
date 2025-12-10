@@ -6,6 +6,10 @@
 [![Solidity](https://img.shields.io/badge/solidity-^0.8.24-363636)](./contracts)
 [![Hardhat](https://img.shields.io/badge/hardhat-^2.24.3-yellow)](./hardhat.config.ts)
 
+[Confidential Supplier Management System.mp4](https://streamable.com/im2xz4)
+
+[Live Demo](https://confidential-supplier-management-sy.vercel.app/)
+
 A comprehensive FHEVM Example Hub demonstrating standalone, Hardhat-based example repositories with automated scaffolding, documentation generation, and complete implementation of privacy-preserving smart contracts using Fully Homomorphic Encryption.
 
 **Zama Bounty Track December 2025**: Build The FHEVM Example Hub
