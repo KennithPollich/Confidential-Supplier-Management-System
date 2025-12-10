@@ -1,0 +1,354 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-12-09T00:00:00Z",
+  "categories": {
+    "enterprise": {
+      "name": "Enterprise Applications",
+      "description": "Production-grade FHE examples for business applications",
+      "count": 1,
+      "examples": [
+        "confidential-supplier-management"
+      ]
+    },
+    "basic": {
+      "name": "Basic Examples",
+      "description": "Foundational FHEVM concepts and operations",
+      "count": 2,
+      "examples": [
+        "fhe-counter",
+        "simple-counter"
+      ]
+    }
+  },
+  "examples": {
+    "confidential-supplier-management": {
+      "id": "confidential-supplier-management",
+      "name": "Confidential Supplier Management System",
+      "description": "Privacy-preserving supplier management with encrypted ratings and comparisons",
+      "category": "enterprise",
+      "subcategory": "business-applications",
+      "complexity": "advanced",
+      "estimatedTime": "30-45 minutes",
+      "status": "production-ready",
+      "version": "1.0.0",
+
+      "concepts": [
+        "access-control",
+        "encrypted-storage",
+        "privacy-preserving-operations",
+        "async-decryption",
+        "owner-based-authorization"
+      ],
+
+      "patterns": [
+        "FHE.asEuint8",
+        "FHE.allowThis",
+        "FHE.allow",
+        "FHE.requestDecryption",
+        "FHE.toBytes32",
+        "owner-based-access-control",
+        "callback-based-decryption",
+        "encrypted-state-storage"
+      ],
+
+      "useCase": "enterprise-supply-chain",
+      "realWorldApplications": [
+        "Supplier evaluation systems",
+        "Confidential vendor management",
+        "Privacy-preserving performance comparisons",
+        "Supply chain confidentiality"
+      ],
+
+      "prerequisites": [
+        "Solidity fundamentals",
+        "Understanding of FHE basics",
+        "Hardhat experience",
+        "Smart contract testing knowledge"
+      ],
+
+      "learningOutcomes": [
+        "How to encrypt sensitive business data",
+        "Implementing access control with encrypted values",
+        "Using async decryption callbacks",
+        "Building privacy-preserving comparisons",
+        "Real-world enterprise FHE patterns"
+      ],
+
+      "relatedExamples": [
+        "fhe-counter",
+        "confidential-voting-system",
+        "private-auction"
+      ],
+
+      "files": {
+        "contract": "contracts/SupplierManagement.sol",
+        "test": "test/SupplierManagement.ts",
+        "deploy": "scripts/deploy.ts",
+        "documentation": "docs/GENERATED_EXAMPLE.md"
+      },
+
+      "metrics": {
+        "contractSize": "~2.5 KB",
+        "functionsCount": 9,
+        "testCount": 35,
+        "gasEstimates": {
+          "addSupplier": "~150,000",
+          "updateRating": "~100,000",
+          "compareRatings": "~50,000",
+          "requestDecryption": "~80,000"
+        }
+      },
+
+      "tags": [
+        "privacy",
+        "enterprise",
+        "business-logic",
+        "access-control",
+        "encryption",
+        "supplier-management"
+      ],
+
+      "difficulty": {
+        "code_complexity": 5,
+        "concept_difficulty": 5,
+        "testing_complexity": 4,
+        "deployment_difficulty": 3
+      },
+
+      "ratings": {
+        "code_quality": 5,
+        "documentation": 5,
+        "test_coverage": 5,
+        "real_world_value": 5,
+        "educational_value": 5
+      },
+
+      "timeline": {
+        "development_time": "2-3 days",
+        "testing_time": "1 day",
+        "documentation_time": "1 day"
+      }
+    },
+
+    "fhe-counter": {
+      "id": "fhe-counter",
+      "name": "FHE Counter",
+      "description": "Encrypted counter demonstrating FHE arithmetic operations",
+      "category": "basic",
+      "subcategory": "arithmetic",
+      "complexity": "beginner",
+      "estimatedTime": "15-20 minutes",
+      "status": "production-ready",
+      "version": "1.0.0",
+
+      "concepts": [
+        "encryption-basics",
+        "arithmetic-operations",
+        "permission-management",
+        "state-management",
+        "async-decryption"
+      ],
+
+      "patterns": [
+        "FHE.asEuint32",
+        "FHE.allowThis",
+        "FHE.allow",
+        "FHE.add",
+        "FHE.sub",
+        "FHE.fromExternal",
+        "FHE.requestDecryption"
+      ],
+
+      "useCase": "basic-fhe-operations",
+      "realWorldApplications": [
+        "Learning FHE basics",
+        "Understanding encrypted arithmetic",
+        "Testing encryption/decryption",
+        "Private vote counting"
+      ],
+
+      "prerequisites": [
+        "Basic Solidity knowledge",
+        "Hardhat setup experience"
+      ],
+
+      "learningOutcomes": [
+        "How to encrypt integers",
+        "Performing arithmetic on encrypted values",
+        "Managing FHE permissions",
+        "Testing encrypted operations",
+        "Async decryption patterns"
+      ],
+
+      "relatedExamples": [
+        "simple-counter",
+        "confidential-supplier-management"
+      ],
+
+      "files": {
+        "contract": "contracts/FHECounter.sol",
+        "test": "test/FHECounter.ts",
+        "deploy": "scripts/deploy.ts"
+      },
+
+      "metrics": {
+        "contractSize": "~3.0 KB",
+        "functionsCount": 8,
+        "testCount": 28,
+        "gasEstimates": {
+          "increment": "~80,000",
+          "decrement": "~80,000",
+          "reset": "~60,000",
+          "requestDecryption": "~70,000"
+        }
+      },
+
+      "tags": [
+        "basics",
+        "encryption",
+        "arithmetic",
+        "learning",
+        "counter"
+      ],
+
+      "difficulty": {
+        "code_complexity": 2,
+        "concept_difficulty": 2,
+        "testing_complexity": 2,
+        "deployment_difficulty": 2
+      },
+
+      "ratings": {
+        "code_quality": 5,
+        "documentation": 5,
+        "test_coverage": 5,
+        "real_world_value": 4,
+        "educational_value": 5
+      }
+    },
+
+    "simple-counter": {
+      "id": "simple-counter",
+      "name": "Simple Counter (Comparison)",
+      "description": "Basic counter for comparison with FHE Counter - demonstrates why encryption is needed",
+      "category": "basic",
+      "subcategory": "comparison",
+      "complexity": "beginner",
+      "estimatedTime": "10-15 minutes",
+      "status": "production-ready",
+      "version": "1.0.0",
+
+      "concepts": [
+        "public-state",
+        "no-encryption",
+        "privacy-comparison",
+        "basic-arithmetic"
+      ],
+
+      "patterns": [
+        "public-storage",
+        "standard-arithmetic",
+        "access-control"
+      ],
+
+      "useCase": "comparison-example",
+      "realWorldApplications": [
+        "Understanding privacy needs",
+        "Comparing encrypted vs non-encrypted",
+        "Learning why FHE matters"
+      ],
+
+      "prerequisites": [
+        "Basic Solidity knowledge"
+      ],
+
+      "learningOutcomes": [
+        "Understanding public vs private data",
+        "Why encryption matters",
+        "Difference between FHE and standard contracts",
+        "Privacy implications"
+      ],
+
+      "relatedExamples": [
+        "fhe-counter"
+      ],
+
+      "files": {
+        "contract": "contracts/SimpleCounter.sol",
+        "test": "test/SimpleCounter.ts",
+        "deploy": "scripts/deploy.ts"
+      },
+
+      "metrics": {
+        "contractSize": "~1.5 KB",
+        "functionsCount": 7,
+        "testCount": 24,
+        "gasEstimates": {
+          "increment": "~30,000",
+          "decrement": "~30,000",
+          "reset": "~25,000"
+        }
+      },
+
+      "tags": [
+        "basics",
+        "comparison",
+        "non-encrypted",
+        "learning",
+        "counter"
+      ],
+
+      "difficulty": {
+        "code_complexity": 1,
+        "concept_difficulty": 1,
+        "testing_complexity": 1,
+        "deployment_difficulty": 1
+      },
+
+      "ratings": {
+        "code_quality": 5,
+        "documentation": 5,
+        "test_coverage": 5,
+        "real_world_value": 3,
+        "educational_value": 5
+      }
+    }
+  },
+
+  "automation": {
+    "scripts": {
+      "create-example": {
+        "file": "scripts/create-fhevm-example.ts",
+        "description": "Generates standalone example repositories",
+        "usage": "ts-node scripts/create-fhevm-example.ts <example-name> [output-path]"
+      },
+      "create-category": {
+        "file": "scripts/create-fhevm-category.ts",
+        "description": "Generates category-based example collections",
+        "usage": "ts-node scripts/create-fhevm-category.ts <category> [output-path]"
+      },
+      "generate-docs": {
+        "file": "scripts/generate-docs.ts",
+        "description": "Generates GitBook documentation",
+        "usage": "ts-node scripts/generate-docs.ts <example-name|--all> [output-dir]"
+      }
+    }
+  },
+
+  "documentation": {
+    "devGuide": "DEVELOPER_GUIDE.md",
+    "submissionGuide": "SUBMISSION.md",
+    "bountyGuide": "BOUNTY_GUIDE.md",
+    "integrationGuide": "INTEGRATION_GUIDE.md",
+    "baseTemplateReadme": "base-template/README.md",
+    "generatedExampleDoc": "docs/GENERATED_EXAMPLE.md"
+  },
+
+  "submission": {
+    "bountyProgram": "Zama Bounty Track December 2025",
+    "track": "Build FHEVM Example Hub",
+    "submissionDeadline": "2025-12-31T23:59:59Z",
+    "category": "FHEVM Examples",
+    "status": "ready-for-submission"
+  }
+}
