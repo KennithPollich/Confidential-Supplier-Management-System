@@ -6,7 +6,7 @@
 [![Solidity](https://img.shields.io/badge/solidity-^0.8.24-363636)](./contracts)
 [![Hardhat](https://img.shields.io/badge/hardhat-^2.24.3-yellow)](./hardhat.config.ts)
 
-[Confidential Supplier Management System.mp4](https://streamable.com/im2xz4)
+[Confidential Supplier Management System.mp4](https://youtu.be/Nb0YmTZTEFY)
 
 [Live Demo](https://confidential-supplier-management-sy.vercel.app/)
 
